@@ -4,4 +4,6 @@ Notebook::Application.routes.draw do
       resources :notes, only: [:index, :create, :update, :destroy]
     end
   end
+
+  root :to => "main#index"
 end
