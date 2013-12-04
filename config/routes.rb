@@ -1,11 +1,7 @@
 Notebook::Application.routes.draw do
-  scope :api do
-    # Collection
-    get "/collections(.:format)" => "collections#index"
-    get "/collections/:id(.:format)" => "collections#show"
-    get "/collections/:id/notes" => "collections#get_notes"
-
-    # Notes
-    get "/notes/:id(.:format)" => "notes#show"
+  scope :api, defaults: { format: :json } do
+    resources :collections, only: [:index] do
+      resources :notes, only: [:index, :create, :update, :destroy]
+    end
   end
 end
