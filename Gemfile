@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'active_model_serializers'
-gem 'angularjs-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'rails', '4.0.2'

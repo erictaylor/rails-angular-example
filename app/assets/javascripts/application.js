@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require unstable/angular
-//= require angular-animate
-//= require unstable/angular-resource
+//= require vendor/angular.min
+//= require vendor/angular-route.min
+//= require vendor/angular-resource.min
+//= require vendor/angular-animate.min
 //= require main

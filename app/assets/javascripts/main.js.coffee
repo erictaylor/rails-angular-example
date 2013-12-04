@@ -9,7 +9,7 @@
 #= require_tree ./services/main
 
 # Setup Angular App
-App = angular.module("App", ["ngResource"])
+App = angular.module("App", ["ngRoute", "ngResource", "ngAnimate"])
 
 # Routing
 App.config(["$routeProvider", ($routeProvider) ->
