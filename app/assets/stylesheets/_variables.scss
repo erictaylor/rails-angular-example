@@ -1,0 +1,61 @@
+//
+// Variables
+// ------------------------------------------
+
+// Global Values
+// ------------------------------------------
+
+// Colors
+// ---------------------
+
+$white:                           #fff !default;
+$black:                           #000 !default;
+
+$off-white:                       #EDECD4 !default;
+
+$gray-lightest:                   #f6f6f7 !default;
+$gray-ligher:                     #e8eaeb !default;
+$gray-light:                      #e8e8e8 !default;
+$gray:                            #d0d0d0 !default;
+$gray-dark:                       #aaa9a2 !default;
+// $gray-darker:                     # !default;
+$gray-darkest:                    #242628 !default;
+
+// Scaffolding
+// ---------------------
+
+$body-bg:                         $off-white !default;
+$text-color:                      $gray-darkest !default;
+
+// Selection
+// ---------------------
+
+$selection-bg:                    $black !default;
+$selection-color:                 $white !default;
+
+// Links
+// ---------------------
+
+$link-color:                      #39C !default;
+$link-hover-color:                darken($link-color, 10%) !default;
+$link-text-decoration:            underline !default;
+
+// Typography
+// ---------------------
+
+$font-family-sans-serif:          "Open Sans", sans-serif !default;
+$font-family-serif:               Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:           "Inconsolata", Menlo, Monaco, Consolas, monospace !default;
+$font-family-base:                $font-family-sans-serif !default;
+$font-weight-base:                300 !default;
+
+$font-size-base:                  16px !default;
+
+$line-height-base:                1.5 !default;
+$line-height-computed:            floor($font-size-base * $line-height-base) !default;
+
+
+// Horizontal Rule
+// ---------------------
+
+$hr-border:                       #000 !default;

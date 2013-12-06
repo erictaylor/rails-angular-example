@@ -13,6 +13,9 @@ App = angular.module("App", ["ngRoute", "ngResource", "ngAnimate"])
 
 # Routing
 App.config(["$routeProvider", ($routeProvider) ->
+  # Collection
+  $routeProvider.when('/collection/:id', { templateUrl: '../assets/showCollection.html', controller: 'CollectionCtrl' })
+
   # Default
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' })
 ])
@@ -20,4 +23,6 @@ App.config(["$routeProvider", ($routeProvider) ->
 # CSRF Token Fix
 App.config(["$httpProvider", (provider) ->
   provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token').attr('content')
+  provider.defaults.headers.patch = provider.defaults.headers.patch || {}
+  provider.defaults.headers.patch['Content-Type'] = 'application/json'
 ])

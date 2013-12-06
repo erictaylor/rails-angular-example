@@ -1,0 +1,44 @@
+/*
+ * Welcome to Lovry - all styles for the Lovry platform are located within
+ * this set of Sass files. Use this file like a table of contents.
+ */
+
+/* ===========================================================================
+   Variables/Mixins - Not directly inserted into the stylesheet.
+   =========================================================================== */
+
+  @import "variables";
+
+  @import "mixins";
+
+/* ===========================================================================
+   Reset - Browser cross compatibility normalization
+   =========================================================================== */
+
+   @import "reset/normalize";
+
+   // @import "reset/print";
+
+/* ===========================================================================
+   Modules - These styles are re-used in many areas, and are grouped by type.
+   =========================================================================== */
+
+   @import "modules/scaffolding";
+
+   @import "modules/type";
+
+   @import "modules/code";
+
+   @import "modules/tables";
+
+   @import "modules/forms";
+
+   @import "modules/buttons";
+
+/* ===========================================================================
+   Layouts - Styles for specific screen layouts, grouped by screen.
+   =========================================================================== */
+
+   @import "layouts/header";
+
+   @import "layouts/footer";

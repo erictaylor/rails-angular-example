@@ -1,0 +1,29 @@
+<section class="content-view-container">
+
+  <section class="content-list js-content-list">
+    <header class="floatingheader">
+      <section class="content-filter">
+        <span>All Notes</span>
+      </section>
+    </header>
+
+    <section class="content-list-content">
+      <ol>
+        <li ng-repeat="note in notes">
+          <a href="#" class="permalink">
+            <h3 class="entry-title">{{note.title}}</h3>
+            <section class="entry-meta">
+              <time datetime="2013-12-05" class="date">Updated # days ago</time>
+            </section>
+          </a>
+        </li>
+      </ol>
+      <span ng-if="notes == ''">No notes</span>
+    </section>
+  </section>
+
+  <section class="content-preview js-content-preview">
+    <!-- Preview Note here -->
+  </section>
+
+</section>
