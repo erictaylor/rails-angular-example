@@ -11,14 +11,14 @@
 $white:                           #fff !default;
 $black:                           #000 !default;
 
-$off-white:                       #EDECD4 !default;
+$off-white:                       #EDECE4 !default;
 
 $gray-lightest:                   #f6f6f7 !default;
-$gray-ligher:                     #e8eaeb !default;
+$gray-lighter:                    #e8eaeb !default;
 $gray-light:                      #e8e8e8 !default;
 $gray:                            #d0d0d0 !default;
 $gray-dark:                       #aaa9a2 !default;
-// $gray-darker:                     # !default;
+$gray-darker:                     #4D5356 !default;
 $gray-darkest:                    #242628 !default;
 
 // Scaffolding
@@ -51,8 +51,29 @@ $font-weight-base:                300 !default;
 
 $font-size-base:                  16px !default;
 
+$font-size-h1:                    54px !default;
+$font-size-h2:                    42px !default;
+$font-size-h3:                    32px !default;
+$font-size-h4:                    24px !default;
+$font-size-h5:                    18px !default;
+$font-size-h6:                    16px !default;
+
 $line-height-base:                1.5 !default;
 $line-height-computed:            floor($font-size-base * $line-height-base) !default;
+
+$headings-font-family:            $font-family-base !default;
+$headings-font-weight:            700 !default;
+$headings-line-height:            1.1 !default;
+$headings-color:                  inherit !default;
+
+
+// Other Typography
+// ---------------------
+
+$abbr-border-color:               $gray-light !default;
+$headings-small-color:            $gray-light !default;
+$blockquote-small-color:          $gray-light !default;
+$blockquote-border-color:         $gray-light !default;
 
 
 // Horizontal Rule

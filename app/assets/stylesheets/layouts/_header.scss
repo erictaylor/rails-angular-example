@@ -1,0 +1,18 @@
+/*
+ * Global Header
+ * ------------------------------------------ */
+
+#global-header {
+  background: $gray-darkest;
+  font-size: 11px;
+  height: 40px;
+  @include clearfix();
+}
+
+.lovry-logo {
+  color: $gray-darker;
+  display: block;
+  float: left;
+  height: 40px;
+  padding: 12px 15px;
+}

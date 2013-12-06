@@ -1,0 +1,121 @@
+/*
+ * Show Collection
+ * ------------------------------------------ */
+
+.content-list,
+.content-preview {
+  background: $white;
+  box-shadow: rgba(0,0,0,0.05) 0 1px 5px;
+  padding: 15px;
+  position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.content-list {
+  border-right: 2px solid $body-bg;
+  left: 0;
+  width: 35%;
+
+  .content-filter {
+    position: relative;
+    z-index: 300; // TODO: Change to variable
+  }
+
+  .button-add {
+    color: $white;
+    padding-left: 5px;
+    position: absolute;
+      top: 10px;
+      right: 15px;
+    z-index: 700; // TODO: Change to variable
+  }
+
+  .content-list-content {
+    overflow: auto;
+    padding-top: 40px;
+    position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  }
+
+  ol {
+    border-top: 1px solid $body-bg;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid $body-bg;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      a {
+        color: $gray-dark;
+        display: block;
+        padding: 20px 15px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &.active {
+        background: $gray-lightest;
+        border-bottom: 1px solid $gray-lighter;
+        box-shadow: $gray-lighter 0 -1px 0, rgba(0,0,0,0.06) 7px 0 0 inset, $gray-lighter 1px 0 0 inset;
+
+        a:hover {
+          box-shadow: rgba(0,0,0,0.1) 7px 0 0 inset;
+          @include transition(all 0.4s ease);
+        }
+
+        .entry-title {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .entry-title,
+  .entry-meta {
+    color: $text-color;
+  }
+
+  .entry-title {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  .entry-meta {
+    font-size: 13px;
+  }
+}
+
+.content-preview {
+  border-left: 2px solid $body-bg;
+  right: 0;
+  width: 65%;
+
+  .content-preview-content {
+    overflow: auto;
+    padding: 80px 40px;
+    position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    @include hyphens(auto);
+
+    .wrapper {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+  }
+}

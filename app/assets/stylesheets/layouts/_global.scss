@@ -1,0 +1,65 @@
+/*
+ * Global Layout
+ * ------------------------------------------ */
+
+main {
+  padding: 0;
+  position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 55px;
+    left: 15px;
+}
+
+.content-view-container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.floating-header {
+  @include gradient-vertical-three-colors(#FFFFFF, #FFFFFF, 25%, rgba(255,255,255,0.9));
+  color: $gray-dark;
+  font-size: 11px;
+  height: 40px;
+  padding: 12px 15px;
+  position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  text-transform: uppercase;
+  z-index: 400; // TODO: Change to variable
+}
+
+.main-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-container.ng-enter,
+.main-container.ng-leave {
+  @include transition(0.1s ease-out all);
+}
+
+.main-container.ng-enter {
+  opacity: 0;
+  @include translate3d(0,0,100%);
+}
+
+.main-container.ng-enter-active {
+  opacity: 1;
+  @include translate3d(0,0,0);
+}
+
+.main-container.ng-leave {
+  opacity: 1;
+  @include translate3d(0,0,0);
+}
+
+.main-container.ng-leave-active {
+  opacity: 0;
+  @include translate3d(0,0,-100%);
+}
