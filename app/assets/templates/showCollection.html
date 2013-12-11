@@ -9,7 +9,7 @@
 
     <section class="content-list-content">
       <ol>
-        <li ng-repeat="note in notes" ng-class="{active: note == selectedNote}">
+        <li ng-repeat="note in notes | filter:search" ng-class="{active: note == selectedNote}">
           <a ng-click="showNote(note)" class="permalink">
             <h3 class="entry-title">{{note.title}}</h3>
             <section class="entry-meta">
@@ -18,6 +18,7 @@
           </a>
         </li>
       </ol>
+      <input type="text" ng-model="search">
       <span ng-if="notes == ''">No notes</span>
     </section>
   </section>
