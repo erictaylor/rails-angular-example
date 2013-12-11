@@ -1,0 +1,7 @@
+<div class="ng-cloak" ng-init="init()">
+  <h1>Dashboard</h1>
+
+  <ul ng-repeat="collection in collections">
+    <li><a href="/collections/{{collection.id}}">{{collection.name}}</a></li>
+  </ul>
+</div>

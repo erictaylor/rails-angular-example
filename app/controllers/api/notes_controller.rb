@@ -1,12 +1,8 @@
-class NotesController < ApplicationController
-  def safe_params
-    params.require(:note).permit(:title, :content)
-  end
-
+class Api::NotesController < Api::BaseController
   # GET /api/collections/:collection_id/notes
   # GET /api/collections/:collection_id/notes.json
   def index
-    render json: Note.where(:collection_id => params[:collection_id])
+    render json: collection.notes
   end
 
   # POST /api/collections/:collection_id/notes
@@ -20,5 +16,24 @@ class NotesController < ApplicationController
   def update
     note.update_attributes(safe_params)
     render nothing: true, status: 204
+  end
+
+  # DELETE /api/collections/:collection_id/notes/:id
+  def destroy
+    note.destroy
+    render nothing: true, status: 204
+  end
+
+  private
+  def collection
+    @colleciton ||= Collection.find(params[:collection_id])
+  end
+
+  def note
+    @note ||= collection.notes.find(params[:id])
+  end
+
+  def safe_params
+    params.require(:note).permit(:title, :content)
   end
 end

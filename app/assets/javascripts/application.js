@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require vendor/angular.min
 //= require vendor/angular-route.min
 //= require vendor/angular-resource.min
