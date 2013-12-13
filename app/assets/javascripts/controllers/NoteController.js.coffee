@@ -5,8 +5,12 @@ angular.module('noteApp').controller "NoteController", ($scope, $timeout, $locat
     $scope.note = @noteService.find $routeParams.note_id
 
   $scope.saveNote = (note) ->
-    @noteService.update(note, title: note.title, content: note.content)
+    # Totally hacked together.
+    content = $('#entry-markdown').val()
+    @noteService.update(note, title: note.title, content: content)
 
+  editor = ->
+    console.log "Hey look"
 
   serverErrorHandler = ->
     alert("There was a server error, please reload the page and try again.")

@@ -45,6 +45,8 @@ angular.module('noteApp').service 'GhostDown', () ->
 
       editor.on "change", ->
         updatePreview()
+        # TODO: Fix Saving. This is hacked.
+        $('#entry-markdown').val editor.getValue()
 
       updatePreview()
 

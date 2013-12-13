@@ -1,4 +1,4 @@
-angular.module("noteApp").directive "ghostDown", (GhostDown) ->
+angular.module("noteApp").directive "noteEditor", (GhostDown) ->
 
   link = (scope, element, attrs) ->
 
@@ -8,7 +8,7 @@ angular.module("noteApp").directive "ghostDown", (GhostDown) ->
 
     content = undefined
 
-    scope.$watch attrs.ghostDown, (value) ->
+    scope.$watch attrs.noteEditor, (value) ->
       content = value
       displayContent()
 
