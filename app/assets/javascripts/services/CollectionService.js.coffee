@@ -25,6 +25,6 @@ angular.module('noteApp').factory 'Collection', ($resource, $http) ->
 
     find: (id, successHandler) ->
       @service.get(id: id, ((collection)->
-        successHandler?(colleciton)
+        successHandler?(collection)
         collection),
         @errorhandler)

@@ -1,0 +1,81 @@
+/*
+ * Show Note
+ * ------------------------------------------ */
+
+.entry-container {
+  height: 100%;
+  position: relative;
+}
+
+.entry-title, .box {
+  background: $white;
+  box-shadow: rgba(0,0,0,0.05) 0 1px 5px;
+  margin-bottom: 15px;
+  padding: 15px;
+  position: relative;
+}
+
+.entry-title {
+  height: 53px;
+  margin-bottom: 5px;
+  padding: 2px 15px;
+  position: relative;
+
+  input {
+    background: transparent;
+    border: 0;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.entry-markdown {
+  border-right: 2px solid $body-bg;
+  left: 0;
+}
+
+.entry-preview {
+  border-left: 2px solid $body-bg;
+  right: 0;
+
+  .floating-header {
+    .entry-word-count {
+      float: right;
+    }
+  }
+}
+
+.entry-markdown,
+.entry-preview {
+  background: $white;
+  box-shadow: rgba(0,0,0,0.05) 0 1px 5px;
+  padding: 15px;
+  position: absolute;
+    bottom: 40px;
+    top: 61px;
+  width: 50%;
+
+  &.active {
+    z-index: 200;
+  }
+}
+
+.entry-markdown-content {
+  textarea {
+    border: 0;
+    height: 100%;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    width: 100%;
+  }
+}

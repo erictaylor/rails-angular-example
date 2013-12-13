@@ -93,19 +93,19 @@
           @include transition(all 0.4s ease);
         }
 
-        .entry-title {
+        .note-title {
           font-weight: 700;
         }
       }
     }
   }
 
-  .entry-title,
-  .entry-meta {
+  .note-title,
+  .note-meta {
     color: $text-color;
   }
 
-  .entry-title {
+  .note-title {
     font-size: 18px;
     font-weight: normal;
     line-height: 1.1;
@@ -113,7 +113,7 @@
     margin-top: 0px;
   }
 
-  .entry-meta {
+  .note-meta {
     font-size: 13px;
   }
 }
@@ -122,6 +122,22 @@
   border-left: 2px solid $body-bg;
   right: 0;
   width: 65%;
+
+  .note-controls {
+    float: right;
+    position: relative;
+  }
+
+  .note-edit {
+    margin-right: 7px;
+    padding: 5px;
+    @include icon($i-edit, 14px) {vertical-align:-7%;};
+  }
+
+  .note-delete {
+    padding: 5px;
+    @include icon($i-trash, 14px) {vertical-align:-7%;};
+  }
 
   .content-preview-content {
     overflow: auto;

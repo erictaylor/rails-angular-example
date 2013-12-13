@@ -1,0 +1,35 @@
+<section class="entry-container" ng-init="init()">
+  <header>
+    <section class="box entry-title">
+      <input type="text" id="entry-title" placeholder="Your Note Title" tabindex="1" ng-model="note.title">
+    </section>
+  </header>
+
+  <section class="entry-markdown active">
+    <header class="floating-header">
+      <span>Markdown</span>
+      <a class="markdown-help">
+        <span class="hidden">What is Markdown?</span>
+      </a>
+    </header>
+
+    <section class="entry-markdown-content">
+      <textarea id="entry-markdown" ng-model="note.content" ghost-down="note.content"></textarea>
+    </section>
+  </section>
+
+  <section class="entry-preview">
+    <header class="floating-header">
+      <span class="pull-left">Preview</span>
+      <span class="entry-word-count js-entry-word-count"></span>
+    </header>
+
+    <section class="entry-preview-content">
+      <div class="rendered-markdown">
+
+      </div>
+    </section>
+  </section>
+</section>
+
+<a ng-click="saveNote(note)">Save Note</a>

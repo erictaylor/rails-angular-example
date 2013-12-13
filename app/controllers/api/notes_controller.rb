@@ -5,6 +5,11 @@ class Api::NotesController < Api::BaseController
     render json: collection.notes
   end
 
+  # GET /api/collections/:collection_id/notes/:id
+  def show
+    render json: note
+  end
+
   # POST /api/collections/:collection_id/notes
   def create
     note = collection.notes.create!(safe_params)

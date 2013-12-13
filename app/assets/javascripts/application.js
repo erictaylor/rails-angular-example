@@ -16,5 +16,8 @@
 //= require vendor/angular.min
 //= require vendor/angular-route.min
 //= require vendor/angular-resource.min
+//= require vendor/angular-sanitize.js
 //= require vendor/angular-animate.min
+//= require vendor/ghostdown
 //= require main
+//

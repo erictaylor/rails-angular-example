@@ -11,9 +11,8 @@ angular.module('noteApp').factory 'Note', ($resource, $http) ->
       defaults.patch = defaults.patch || {}
       defaults.patch['Content-Type'] = 'application/json'
 
-    create: (attrs) ->
-      new @service(note: attrs).$save ((note) -> attrs.id = note.id), @errorHandler
-      attrs
+    create: (attrs, successHandler) ->
+      new @service(note: attrs).$save ((note) -> successHandler(note)), @errorHandler
 
     delete: (note) ->
       new @service().$delete {id: note.id}, (-> null), @errorHandler
@@ -23,3 +22,9 @@ angular.module('noteApp').factory 'Note', ($resource, $http) ->
 
     all: ->
       @service.query((-> null), @errorHandler)
+
+    find: (id, successHandler) ->
+      @service.get(id: id, ((note)->
+        successHandler?(note)
+        note),
+        @errorhandler)

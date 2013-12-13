@@ -1,7 +1,45 @@
-<div class="ng-cloak" ng-init="init()">
-  <h1>Collection</h1>
+<section class="show-collection content-view-container" ng-init="init()">
 
-  <ul ng-repeat="note in collection.notes">
-    <li>{{note.title}}</li>
-  </ul>
-</div>
+  <section class="content-list js-content-list">
+    <header class="floating-header">
+      <section class="content-filter">
+        <span>All Notes</span>
+        <a ng-click="addNote()">Add Note</a>
+      </section>
+    </header>
+
+    <section class="content-list-content">
+      <ol>
+        <li ng-repeat="note in collection.notes | orderBy:'updated_at':true | filter:search" ng-class="{active: note == selectedNote}">
+          <a ng-click="showNote(note)" class="permalink">
+            <h3 class="note-title">{{note.title}}</h3>
+            <section class="note-meta">
+              <time datetime="{{dateTime(note.updated_at)}}" class="date">Updated {{lastUpdated(note.updated_at)}}</time>
+            </section>
+          </a>
+        </li>
+      </ol>
+      <input type="text" ng-model="search">
+      <span ng-if="collection.notes == ''">No notes</span>
+    </section>
+  </section>
+
+  <section class="content-preview js-content-preview">
+    <header class="floating-header" ng-if="selectedNote">
+      <section class="note-controls">
+        <a ng-click="goToNote(selectedNote)" class="note-edit"><span class="hidden">Edit Note</span></a>
+        <a ng-click="deleteNote(selectedNote)" class="note-delete"><span class="hidden">Delete Note</span></a>
+      </section>
+    </header>
+
+    <section class="content-preview-content">
+      <div class="wrapper" ng-if="!selectedNote">
+        Select a note to the left, or create a new note.
+      </div>
+      <div class="wrapper" ng-bind-html="selectedNotePreview">
+
+      </div>
+    </section>
+  </section>
+
+</section>

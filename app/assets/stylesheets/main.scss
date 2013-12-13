@@ -23,6 +23,8 @@
    Modules - These styles are re-used in many areas, and are grouped by type.
    =========================================================================== */
 
+   @import "modules/icons";
+
    @import "modules/scaffolding";
 
    @import "modules/type";
@@ -48,3 +50,11 @@
    @import "layouts/notifications";
 
    @import "layouts/show-collection";
+
+   @import "layouts/show-note";
+
+/* ===========================================================================
+   Utilities - Styles for overriding behavior.
+   =========================================================================== */
+
+   @import "utilities";

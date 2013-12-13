@@ -5,7 +5,7 @@
 #= require_tree ./services
 
 # Setup Angular App
-noteApp = angular.module('noteApp', ["ngResource", "ngRoute"])
+noteApp = angular.module('noteApp', ["ngResource", "ngRoute", "ngSanitize"])
 
 # CSRF Token Fix
 noteApp.config ($httpProvider) ->
@@ -18,6 +18,7 @@ noteApp.config ($routeProvider, $locationProvider) ->
   $routeProvider.when '/', redirectTo: '/dashboard'
   $routeProvider.when '/dashboard', templateUrl: '/templates/dashboard.html', controller: 'DashboardController'
   $routeProvider.when '/collections/:collection_id', templateUrl: '/templates/collection.html', controller: 'CollectionController'
+  $routeProvider.when '/collections/:collection_id/notes/:note_id', templateUrl: '/templates/note.html', controller: 'NoteController'
 
   # Default
   # $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' })

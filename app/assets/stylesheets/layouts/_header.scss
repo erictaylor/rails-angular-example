@@ -15,4 +15,10 @@
   float: left;
   height: 40px;
   padding: 12px 15px;
+  @include icon($i-home) {vertical-align:-7%;};
+
+  &:hover {
+    background: $header-bg-hover;
+    color: $header-hover;
+  }
 }
