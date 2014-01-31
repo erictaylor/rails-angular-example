@@ -27,8 +27,8 @@ angular.module('noteApp').controller "CollectionController", ($scope, $timeout, 
     $scope.selectedNotePreview = GhostDown.toHtml($scope.selectedNote.content)
 
   $scope.dateTime = (datetime) ->
-    date = new Date datetime
-    year = date.getFullYear()
+    date  = new Date datetime
+    year  = date.getFullYear()
     month = date.getMonth() + 1
     if date.getDate() < 10
       day = "0" + date.getDate()
@@ -39,26 +39,26 @@ angular.module('noteApp').controller "CollectionController", ($scope, $timeout, 
   $scope.lastUpdated = (date) ->
 
     # Number of milliseconds in sec, min, hour, day
-    ONE_SEC = 1000
-    ONE_MIN = ONE_SEC * 60
+    ONE_SEC  = 1000
+    ONE_MIN  = ONE_SEC * 60
     ONE_HOUR = ONE_MIN * 60
-    ONE_DAY = ONE_HOUR * 24
+    ONE_DAY  = ONE_HOUR * 24
 
     # Last Updated Date
     updated_date = new Date(date)
 
     # Convert date to current time.
-    date_ms = updated_date.getTime()
+    date_ms    = updated_date.getTime()
     current_ms = new Date().getTime()
 
     # Calc diff
     difference_ms = Math.abs(date_ms - current_ms)
 
     # Convert
-    secs_ago = Math.round(difference_ms/ONE_SEC)
-    mins_ago = Math.round(difference_ms/ONE_MIN)
+    secs_ago  = Math.round(difference_ms/ONE_SEC)
+    mins_ago  = Math.round(difference_ms/ONE_MIN)
     hours_ago = Math.round(difference_ms/ONE_HOUR)
-    days_ago = Math.round(difference_ms/ONE_DAY)
+    days_ago  = Math.round(difference_ms/ONE_DAY)
 
     if secs_ago <= 60
       return secs_ago + " seconds ago"
